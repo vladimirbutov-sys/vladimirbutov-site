@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vladimir Butov → Plata Cards | Product Lead — Debit Cards & Savings Accounts</title>
+<meta name="description" content="Applying for Product Lead [Debit Cards & Savings Accounts] at Plata Card. 13+ years in banking. Built a full Colombia market entry strategy — 17 features, financial model, 3-year P&L.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #0f1118;
+    --bg-secondary: #161822;
+    --bg-card: #1c1f2e;
+    --bg-card-hover: #232740;
+    --accent: #e85d26;
+    --accent-light: #ff7a45;
+    --accent-glow: rgba(232, 93, 38, 0.15);
+    --text-primary: #f0f0f5;
+    --text-secondary: #9498b0;
+    --text-muted: #5d6178;
+    --border: rgba(148, 152, 176, 0.12);
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .top-bar {
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  }
+
+  nav {
+    position: fixed; top: 3px; left: 0; right: 0; z-index: 99;
+    padding: 1rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    backdrop-filter: blur(20px);
+    background: rgba(15, 17, 24, 0.85);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary); letter-spacing: 0.05em; }
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.3s; letter-spacing: 0.02em; }
+  .nav-links a:hover { color: var(--accent-light); }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+  /* ---- Vacancy Banner ---- */
+  .vacancy-banner {
+    position: relative;
+    z-index: 2;
+    margin-top: 70px;
+    background: linear-gradient(135deg, rgba(232, 93, 38, 0.12), rgba(232, 93, 38, 0.04));
+    border: 1px solid rgba(232, 93, 38, 0.25);
+    border-radius: 12px;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.1s;
+  }
+
+  .vacancy-banner-text {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .vacancy-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.3rem 0.75rem;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+
+  .vacancy-title {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .vacancy-link {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-light);
+    text-decoration: none;
+    border: 1px solid rgba(232, 93, 38, 0.3);
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    transition: all 0.3s;
+    white-space: nowrap;
+  }
+
+  .vacancy-link:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  /* ---- Hero ---- */
+  .hero {
+    min-height: calc(100vh - 130px);
+    display: flex; align-items: center;
+    position: relative; padding-top: 2rem;
+  }
+
+  .hero-bg {
+    position: absolute; top: -10%; right: -20%; width: 800px; height: 800px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none; animation: pulse 8s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+  }
+
+  .hero-content { position: relative; z-index: 2; }
+
+  .hero-eyebrow {
+    font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);
+    letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+
+  .hero h1 .highlight {
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.2rem; color: var(--text-secondary); max-width: 620px; margin-bottom: 2.5rem;
+    opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.9rem 2rem; border-radius: 8px;
+    font-family: var(--font-body); font-size: 0.95rem; font-weight: 600;
+    text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none;
+  }
+
+  .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 20px rgba(232, 93, 38, 0.3); }
+  .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 6px 30px rgba(232, 93, 38, 0.4); }
+  .btn-outline { background: transparent; color: var(--text-primary); border: 1px solid var(--border); }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent-light); background: var(--accent-glow); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---- Stats ---- */
+  .stats { padding: 4rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+  .stat { text-align: center; }
+  .stat-number { font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 0.5rem; }
+  .stat-label { font-size: 0.85rem; color: var(--text-secondary); letter-spacing: 0.03em; }
+
+  /* ---- Sections ---- */
+  section { padding: 6rem 0; }
+  .section-label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; }
+  .section-title { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; }
+  .section-text { font-size: 1.05rem; color: var(--text-secondary); max-width: 700px; line-height: 1.8; }
+
+  /* ---- Why ---- */
+  .why-section { border-bottom: 1px solid var(--border); }
+  .why-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .why-quote { font-size: 1.4rem; font-weight: 500; line-height: 1.6; padding-left: 1.5rem; border-left: 3px solid var(--accent); margin-top: 2rem; color: var(--text-primary); }
+  .why-details { display: flex; flex-direction: column; gap: 1.5rem; }
+  .why-item { padding: 1.5rem; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border); transition: all 0.3s ease; }
+  .why-item:hover { background: var(--bg-card-hover); border-color: rgba(232, 93, 38, 0.3); transform: translateX(4px); }
+  .why-item-title { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .why-item-text { color: var(--text-secondary); font-size: 0.95rem; }
+
+  /* ---- Experience ---- */
+  .exp-section { border-bottom: 1px solid var(--border); }
+  .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+  .exp-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; position: relative; overflow: hidden; }
+  .exp-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), transparent); opacity: 0; transition: opacity 0.3s; }
+  .exp-card:hover { border-color: rgba(232, 93, 38, 0.25); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+  .exp-card:hover::before { opacity: 1; }
+  .exp-period { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+  .exp-role { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .exp-company { font-size: 0.9rem; color: var(--accent); margin-bottom: 1rem; }
+  .exp-metric { display: inline-block; padding: 0.3rem 0.75rem; background: var(--accent-glow); border: 1px solid rgba(232, 93, 38, 0.2); border-radius: 6px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-light); margin: 0.25rem 0.25rem 0.25rem 0; }
+
+  /* ---- Case Study ---- */
+  .case-section { background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; }
+  .case-section::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%); pointer-events: none; opacity: 0.5; }
+  .case-header { text-align: center; margin-bottom: 4rem; position: relative; z-index: 2; }
+  .case-header .section-text { margin: 0 auto; }
+  .case-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem; position: relative; z-index: 2; }
+  .case-stat { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 2rem 1.5rem; text-align: center; transition: all 0.3s ease; }
+  .case-stat:hover { border-color: rgba(232, 93, 38, 0.3); transform: translateY(-4px); }
+  .case-stat-number { font-size: 2.2rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
+  .case-stat-label { font-size: 0.85rem; color: var(--text-secondary); }
+  .case-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; position: relative; z-index: 2; }
+  .feature-tag { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.5rem; transition: all 0.3s ease; }
+  .feature-tag:hover { border-color: rgba(232, 93, 38, 0.25); background: var(--bg-card-hover); }
+  .feature-tier { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; margin-bottom: 0.5rem; }
+  .tier-s { background: rgba(232, 93, 38, 0.2); color: var(--accent-light); }
+  .tier-a { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+  .tier-b { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+  .tier-c { background: rgba(148, 152, 176, 0.15); color: var(--text-secondary); }
+  .feature-name { font-size: 0.9rem; font-weight: 500; }
+
+  /* ---- CTA ---- */
+  .cta-section { text-align: center; padding: 8rem 0; }
+  .cta-section .section-title { margin-bottom: 1rem; }
+  .cta-section .section-text { margin: 0 auto 2.5rem; text-align: center; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+  .contact-row { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+  .contact-item { font-size: 0.9rem; color: var(--text-secondary); }
+  .contact-item a { color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border); transition: all 0.3s; }
+  .contact-item a:hover { color: var(--accent-light); border-color: var(--accent); }
+
+  footer { padding: 2rem; text-align: center; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-muted); }
+  footer a { color: var(--text-secondary); text-decoration: none; }
+
+  @media (max-width: 900px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-content { grid-template-columns: 1fr; gap: 2rem; }
+    .exp-grid { grid-template-columns: 1fr; }
+    .case-grid { grid-template-columns: repeat(2, 1fr); }
+    .case-features { grid-template-columns: repeat(2, 1fr); }
+    .nav-links { display: none; }
+    .vacancy-banner { flex-direction: column; align-items: flex-start; }
+  }
+
+  @media (max-width: 600px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .case-grid { grid-template-columns: 1fr 1fr; }
+    .case-features { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.2rem; }
+    .contact-row { flex-direction: column; align-items: center; gap: 1rem; }
+  }
+
+  .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<nav>
+  <div class="nav-logo"><span>VB</span> → Plata</div>
+  <ul class="nav-links">
+    <li><a href="#why">Why Plata</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#case">Case: Colombia</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== VACANCY BANNER ==================== -->
+<div class="container">
+  <div class="vacancy-banner">
+    <div class="vacancy-banner-text">
+      <span class="vacancy-badge">Applying for</span>
+      <span class="vacancy-title">Product Lead [Debit Cards & Savings Accounts] — Plata Card Colombia</span>
+    </div>
+    <a href="https://career.platacard.mx/vacancy/details?id=5038199008" target="_blank" class="vacancy-link">View vacancy →</a>
+  </div>
+</div>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Head of Daily Banking · 13+ years in fintech · Open to relocation to Colombia</div>
+      <h1>
+        Vladimir Butov<br>
+        <span class="highlight">→ Plata Cards</span>
+      </h1>
+      <p class="hero-sub">
+        I independently built a full product strategy for Plata's Colombia market entry: 17 features, financial model, 3-year P&L. Not because anyone asked — because I couldn't stop thinking about how Plata can win this market.
+      </p>
+      <div class="hero-cta">
+        <a href="#case" class="btn btn-primary">See the case study ↓</a>
+        <a href="#contact" class="btn btn-outline">CV + presentation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STATS ==================== -->
+<div class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-number">13+</div>
+        <div class="stat-label">Years in banking</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">265%</div>
+        <div class="stat-label">Gross Profit growth (current role)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">80</div>
+        <div class="stat-label">People in cross-functional teams</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">$1.3M</div>
+        <div class="stat-label">Largest project budget</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== WHY ==================== -->
+<section class="why-section" id="why">
+  <div class="container">
+    <div class="why-content">
+      <div class="reveal">
+        <div class="section-label">// Why Plata</div>
+        <h2 class="section-title">For the first time in my career, I'm 100% certain</h2>
+        <p class="section-text">
+          I've been following Plata for over a year. How you build product, how you scale in Mexico, how you think about LATAM. I know this is the right match — for the role and for the company.
+        </p>
+        <blockquote class="why-quote">
+          I didn't just apply for a position. I built a complete market entry strategy for a new country — on my own initiative, on my own time, because the opportunity wouldn't let me go.
+        </blockquote>
+      </div>
+      <div class="why-details reveal">
+        <div class="why-item">
+          <div class="why-item-title">Product</div>
+          <div class="why-item-text">Debit cards, savings accounts, payments, loyalty — this is what I do every day and have done for 13 years. Full cycle: from strategy to P&L ownership.</div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-title">Scale</div>
+          <div class="why-item-text">Migrated a bank to an in-house digital platform. Launched credit cards from scratch. Built international cards and cross-border transfers. Done this at multiple banks.</div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-title">LATAM depth</div>
+          <div class="why-item-text">Deep research into the Colombian market: regulatory frameworks (SFC, CATS, FOGAFIN), competitors (Nequi, Nu, Lulo Bank), cultural patterns (natilleras, quincena, pasar peña).</div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-title">Ready to move</div>
+          <div class="why-item-text">Open to relocation to Colombia. Learning Spanish. This isn't a checkbox — it's the plan.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== EXPERIENCE ==================== -->
+<section class="exp-section" id="experience">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">// Experience</div>
+      <h2 class="section-title">Built banking products<br>from scratch and at scale</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card reveal">
+        <div class="exp-period">2021 — Present</div>
+        <div class="exp-role">Head of Daily Banking</div>
+        <div class="exp-company">Transcapitalbank · ~50 people, 16 direct reports</div>
+        <div>
+          <span class="exp-metric">+265% Gross Profit</span>
+          <span class="exp-metric">+157% LTV</span>
+          <span class="exp-metric">7%→35% penetration</span>
+          <span class="exp-metric">$1.3M digital migration</span>
+        </div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-period">2020 — 2021</div>
+        <div class="exp-role">Head of Card Products</div>
+        <div class="exp-company">Moscow Industrial Bank · 10 people</div>
+        <div>
+          <span class="exp-metric">Credit cards from scratch</span>
+          <span class="exp-metric">Product analytics system</span>
+        </div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-period">2018 — 2020</div>
+        <div class="exp-role">Head of Debit Cards</div>
+        <div class="exp-company">Vostochny Bank · 6 people</div>
+        <div>
+          <span class="exp-metric">+52% sales</span>
+          <span class="exp-metric">+87% CLTV</span>
+          <span class="exp-metric">5× fee income</span>
+        </div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-period">2012 — 2018</div>
+        <div class="exp-role">Product Manager → Product Lead</div>
+        <div class="exp-company">B&N Bank · up to 30 people</div>
+        <div>
+          <span class="exp-metric">SVO Club co-brand</span>
+          <span class="exp-metric">85% new-to-bank</span>
+          <span class="exp-metric">$650K budget</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CASE STUDY ==================== -->
+<section class="case-section" id="case">
+  <div class="container">
+    <div class="case-header reveal">
+      <div class="section-label">// Product Case Study</div>
+      <h2 class="section-title">Plata Cards Colombia:<br>Market Entry Strategy</h2>
+      <p class="section-text">
+        Full market research, product strategy for two segments, financial model with unit economics and P&L — in a 21-slide investor-ready presentation.
+      </p>
+    </div>
+
+    <div class="case-grid reveal">
+      <div class="case-stat">
+        <div class="case-stat-number">17</div>
+        <div class="case-stat-label">Product features designed</div>
+      </div>
+      <div class="case-stat">
+        <div class="case-stat-number">22</div>
+        <div class="case-stat-label">Pain points addressed</div>
+      </div>
+      <div class="case-stat">
+        <div class="case-stat-number">Y2</div>
+        <div class="case-stat-label">Breakeven (EBITDA+)</div>
+      </div>
+      <div class="case-stat">
+        <div class="case-stat-number">40.8%</div>
+        <div class="case-stat-label">EBITDA margin by Y3</div>
+      </div>
+    </div>
+
+    <div class="case-features reveal">
+      <div class="feature-tag">
+        <span class="feature-tier tier-s">TIER S</span>
+        <div class="feature-name">High-Yield Savings 9-10%</div>
+      </div>
+      <div class="feature-tag">
+        <span class="feature-tier tier-s">TIER S</span>
+        <div class="feature-name">Cashback 0.5-1% on Debit</div>
+      </div>
+      <div class="feature-tag">
+        <span class="feature-tier tier-s">TIER S</span>
+        <div class="feature-name">Free Card + 1-Day Delivery</div>
+      </div>
+      <div class="feature-tag">
+        <span class="feature-tier tier-s">TIER S</span>
+        <div class="feature-name">Anti-Fraud + Duress PIN</div>
+      </div>
+      <div class="feature-tag">
+        <span class="feature-tier tier-s">TIER S</span>
+        <div class="feature-name">Plata Global: Virtual USD</div>
+      </div>
+      <div class="feature-tag">
+        <span class="feature-tier tier-a">TIER A</span>
+        <div class="feature-name">Quincena Dashboard</div>
+      </div>
+      <div class="feature-tag">
+        <span class="feature-tier tier-a">TIER A</span>
+        <div class="feature-name">Plata Barrio: QR Cash-Out</div>
+      </div>
+      <div class="feature-tag">
+        <span class="feature-tier tier-a">TIER A</span>
+        <div class="feature-name">Auto-Overdraft (Anti Peña)</div>
+      </div>
+      <div class="feature-tag">
+        <span class="feature-tier tier-b">TIER B</span>
+        <div class="feature-name">GMF Tax Optimizer</div>
+      </div>
+      <div class="feature-tag">
+        <span class="feature-tier tier-b">TIER B</span>
+        <div class="feature-name">Digital Natillera</div>
+      </div>
+      <div class="feature-tag">
+        <span class="feature-tier tier-c">TIER C</span>
+        <div class="feature-name">PPT Migrant Onboarding</div>
+      </div>
+      <div class="feature-tag">
+        <span class="feature-tier tier-c">TIER C</span>
+        <div class="feature-name">Women-First + Gig Tools</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="cta-section" id="contact">
+  <div class="container reveal">
+    <div class="section-label">// Let's talk</div>
+    <h2 class="section-title">Ready to start<br>on day one</h2>
+    <p class="section-text">
+      CV and full product case study (21 slides) available as a single PDF.<br>Open to relocation to Colombia.
+    </p>
+    <div class="cta-buttons">
+      <a href="mailto:vladimirbutov@gmail.com?subject=Plata%20—%20Product%20Lead%20%5BDebit%20Cards%20%26%20Savings%5D" class="btn btn-primary">Email me →</a>
+      <!-- Replace # with actual link to your hosted PDF -->
+      <a href="#" class="btn btn-outline">Download CV + Case (PDF)</a>
+    </div>
+    <div class="contact-row">
+      <div class="contact-item">Email: <a href="mailto:vladimirbutov@gmail.com">vladimirbutov@gmail.com</a></div>
+      <div class="contact-item">WhatsApp / Telegram: <a href="https://wa.me/79852594699">+7 985 259-46-99</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Vladimir Butov · Product Lead · February 2026 · <a href="https://career.platacard.mx/vacancy/details?id=5038199008" target="_blank">Applying for: Product Lead [Debit Cards & Savings Accounts]</a>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+</body>
+</html>
