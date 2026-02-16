@@ -34,7 +34,6 @@
     line-height: 1.7;
     overflow-x: hidden;
   }
-
   body::before {
     content: '';
     position: fixed;
@@ -43,7 +42,15 @@
     pointer-events: none;
     z-index: -1;
   }
-
+  section, nav, header, footer, .hero {
+    position: relative;
+    z-index: 2;
+  }
+  a, button {
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+  }
   .top-bar {
     height: 3px;
     background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
